@@ -1,0 +1,23 @@
+services:
+  minio:
+    image: bitnami/minio
+    container_name: minio
+    ports:
+      - 9090:9000
+      - 9091:9001
+    networks:
+      - minionetwork
+    volumes:
+      - minio_data:/bitnami/minio/data
+    environment:
+      - MINIO_ROOT_USER=${MINIO_ROOT_USER}
+      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
+      - MINIO_DEFAULT_BUCKETS=test-bucket
+
+networks:
+  minionetwork:
+    driver: bridge
+
+volumes:
+  minio_data:
+    driver: local

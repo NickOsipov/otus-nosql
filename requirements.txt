@@ -1,0 +1,7 @@
+boto3==1.35.56
+minio==7.2.10
+clickhouse-connect==0.8.6
+pymongo==4.10.1
+pandas==2.2.3
+ipykernel==6.29.5
+python-dotenv==1.0.1
