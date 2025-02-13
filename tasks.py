@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-INFRA_DIR = "infrastructure"
+INFRA_DIR = "infra"
 SERVICES = ["minio", "clickhouse", "mongodb"]
 
 
@@ -58,7 +58,23 @@ def get_services_list(services: str) -> list:
     }
 )
 def up(ctx: Context, services: str = "all") -> None:
-    """Start the specified services."""
+    """Start the specified services.
+
+    Parameters
+    ----------
+    ctx : Context
+        Invoke context.
+    services : str
+        List of services to start. Default is "all".
+
+    Examples
+    --------
+    Start all services:
+    >>> inv up
+
+    Start specific services:
+    >>> inv up --services="minio, clickhouse"
+    """
     services_list = get_services_list(services)
 
     if not services_list:
@@ -90,3 +106,9 @@ def down(ctx: Context, services: str = "all") -> None:
     for service in services_list:
         print(f"Stopping {service}...")
         service_actions[service]["down"](ctx)
+
+@task
+def hello_world(ctx: Context) -> None:
+    """Print hello world."""
+    ctx.run("echo 'Hello, World!'")
+    ctx.run("ls -la")
