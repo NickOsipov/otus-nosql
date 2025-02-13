@@ -5,3 +5,4 @@ pymongo==4.10.1
 pandas==2.2.3
 ipykernel==6.29.5
 python-dotenv==1.0.1
+invoke==2.2.0
