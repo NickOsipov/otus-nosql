@@ -1,0 +1,16 @@
+[project]
+name = "otus-nosql"
+version = "1.0.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = "==3.11.12"
+dependencies = [
+    "boto3==1.35.56",
+    "clickhouse-connect==0.8.6",
+    "invoke==2.2.0",
+    "ipykernel==6.29.5",
+    "minio==7.2.10",
+    "pandas==2.2.3",
+    "pymongo==4.10.1",
+    "python-dotenv==1.0.1",
+]
