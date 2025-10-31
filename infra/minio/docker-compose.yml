@@ -1,6 +1,6 @@
 services:
   minio:
-    image: bitnami/minio
+    image: minio/minio@sha256:b36dbf66046daa79a1cdc6b1a35e0e7724e3b12ee21d528c8952c30b7984c1bb
     container_name: minio
     ports:
       - 9090:9000
@@ -8,11 +8,11 @@ services:
     networks:
       - minionetwork
     volumes:
-      - minio_data:/bitnami/minio/data
+      - minio_data:/data
+    command: server /data --console-address ":9001"
     environment:
-      - MINIO_ROOT_USER=${MINIO_ROOT_USER}
-      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
-      - MINIO_DEFAULT_BUCKETS=test-bucket
+      - MINIO_ROOT_USER=minioadmin
+      - MINIO_ROOT_PASSWORD=minioadmin
 
 networks:
   minionetwork:
