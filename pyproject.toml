@@ -3,7 +3,7 @@ name = "otus-nosql"
 version = "1.0.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = "==3.11.12"
+requires-python = "==3.11.4"
 dependencies = [
     "boto3==1.35.56",
     "clickhouse-connect==0.8.6",

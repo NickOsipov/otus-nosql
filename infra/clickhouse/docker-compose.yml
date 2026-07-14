@@ -11,8 +11,13 @@ services:
       - clickhouse-network
     ports:
       - 8123:8123 # http
-      - 9100:9000 # tcp
+      - 9000:9000 # tcp
+    # volumes:
+    #   - clickhouse_data:/var/lib/clickhouse
 
 networks:
   clickhouse-network:
     driver: bridge
+
+# volumes:
+#   clickhouse_data:

@@ -1,5 +1,5 @@
 version = 1
-requires-python = "==3.11.12"
+requires-python = "==3.11.4"
 
 [[package]]
 name = "appnope"
@@ -389,7 +389,7 @@ wheels = [
 
 [[package]]
 name = "otus-nosql"
-version = "0.1.0"
+version = "1.0.0"
 source = { virtual = "." }
 dependencies = [
     { name = "boto3" },
